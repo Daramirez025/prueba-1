@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de prueba genérica</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#" data-testid="logo">TestLab</a>
+        <nav class="nav" aria-label="Principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#componentes">Componentes</a>
+          <a href="#formulario">Formulario</a>
+          <a href="#estado">Estado</a>
+        </nav>
+        <button
+          type="button"
+          id="theme-toggle"
+          class="btn btn-ghost"
+          aria-label="Cambiar tema"
+          data-testid="theme-toggle"
+        >
+          Tema
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="inicio" class="hero">
+        <div class="container">
+          <p class="badge" data-testid="status-badge">Entorno de prueba</p>
+          <h1>Página genérica para pruebas</h1>
+          <p class="lead">
+            Plantilla mínima con navegación, formulario, tarjetas y estado en
+            pantalla. Ideal para probar scripts, selectores y flujos manuales.
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" id="cta-primary">
+              Acción principal
+            </button>
+            <button type="button" class="btn btn-secondary" id="cta-secondary">
+              Acción secundaria
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="componentes" class="section">
+        <div class="container">
+          <h2>Componentes</h2>
+          <div class="grid cards">
+            <article class="card" data-testid="card-1">
+              <h3>Contador</h3>
+              <p class="counter-display">
+                Valor: <strong id="counter-value">0</strong>
+              </p>
+              <div class="row">
+                <button type="button" class="btn btn-sm" id="counter-dec">−</button>
+                <button type="button" class="btn btn-sm" id="counter-inc">+</button>
+                <button type="button" class="btn btn-sm btn-ghost" id="counter-reset">
+                  Reset
+                </button>
+              </div>
+            </article>
+            <article class="card" data-testid="card-2">
+              <h3>Lista dinámica</h3>
+              <ul id="todo-list" class="todo-list" data-testid="todo-list"></ul>
+              <div class="row">
+                <input
+                  type="text"
+                  id="todo-input"
+                  placeholder="Nuevo ítem…"
+                  data-testid="todo-input"
+                />
+                <button type="button" class="btn btn-sm btn-primary" id="todo-add">
+                  Añadir
+                </button>
+              </div>
+            </article>
+            <article class="card" data-testid="card-3">
+              <h3>Modal</h3>
+              <p>Prueba diálogos y foco.</p>
+              <button type="button" class="btn btn-sm" id="open-modal">
+                Abrir modal
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="formulario" class="section section-alt">
+        <div class="container">
+          <h2>Formulario de contacto</h2>
+          <form id="contact-form" class="form" data-testid="contact-form" novalidate>
+            <label>
+              Nombre
+              <input type="text" name="name" required minlength="2" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Tipo
+              <select name="type">
+                <option value="demo">Demo</option>
+                <option value="bug">Reporte de bug</option>
+                <option value="other">Otro</option>
+              </select>
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="newsletter" />
+              Quiero recibir novedades
+            </label>
+            <label>
+              Mensaje
+              <textarea name="message" rows="4" required></textarea>
+            </label>
+            <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="estado" class="section">
+        <div class="container">
+          <h2>Registro de eventos</h2>
+          <p class="muted">Últimas acciones capturadas por JavaScript.</p>
+          <ol id="event-log" class="event-log" data-testid="event-log"></ol>
+          <button type="button" class="btn btn-ghost" id="clear-log">Limpiar log</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Página de prueba · <span id="year"></span></p>
+      </div>
+    </footer>
+
+    <dialog id="demo-modal" class="modal" data-testid="demo-modal">
+      <h2>Modal de ejemplo</h2>
+      <p>Este diálogo usa el elemento nativo <code>&lt;dialog&gt;</code>.</p>
+      <form method="dialog">
+        <button type="submit" class="btn btn-primary">Cerrar</button>
+      </form>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
